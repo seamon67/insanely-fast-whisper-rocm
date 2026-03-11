@@ -444,7 +444,7 @@ class WhisperPipeline(BasePipeline):
         chunk_data = audio_processing.split_audio(
             converted_path,
             chunk_duration=float(self.asr_backend.config.chunk_length),
-            chunk_overlap=0.0,
+            chunk_overlap=0.05,
         )
         total_chunks = len(chunk_data)
         logger.debug(
